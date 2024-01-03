@@ -7,7 +7,6 @@ import pandas as pd
 chromedriver_path = r'C:\Users\16306\Desktop\Python Projects\Instagram\chromedriver-win64\chromedriver.exe'
 
 options = ChromeOptions()
-
 options.add_argument(f"webdriver.chrome.driver={chromedriver_path}")
 driver = Chrome(options=options)
 driver.get('https://free-proxy-list.net/')
@@ -27,7 +26,7 @@ for row in rows:
     data.append({'IP Address': ip_address, 'Port Number':port_number, 'Orgin':orgin, 'Https Support': https_support})
 
 df = pd.DataFrame(data)
-filtered_df = df[(df['Https Support'] == 'yes') & (df['Orgin'] == 'United States')]
+filtered_df = df[(df['Https Support'] == 'yes')]
 print(filtered_df)
 sleep(1)
 
